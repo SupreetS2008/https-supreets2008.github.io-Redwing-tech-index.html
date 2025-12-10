@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Order — RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent-red:#ff004d;
+    --accent-blue:#00b7ff;
+    --glass:rgba(255,255,255,0.04);
+    --muted:#bfc8d1;
+    --btn-grad: linear-gradient(90deg,var(--accent-red),#b3003a);
+    --radius:12px;
+    --maxw:1400px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Lexend",system-ui,Arial;
+    background:#0b0e15;color:#eaeaea;line-height:1.6;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;padding-bottom:48px;
+  }
+
+  a{color:var(--accent-blue)}
+  img{max-width:100%;display:block;border-radius:10px}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;height:72px;
+    display:flex;align-items:center;justify-content:space-between;padding:0 22px;
+    background:linear-gradient(180deg, rgba(6,6,8,0.92), rgba(10,10,12,0.6));
+    backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.03)
+  }
+  .brand{color:var(--accent-red);font-weight:800;cursor:pointer}
+  .nav-links{display:flex;gap:14px;align-items:center}
+  .nav-links a{color:#fff;text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
+  .nav-links a:hover{background:rgba(255,0,77,0.10)}
+
+  .search-box{background:var(--glass);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03)}
+  .search-box input{background:transparent;border:none;color:#fff;outline:none;width:180px}
+  @media(max-width:920px){.search-box{display:none}}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:110px 28px 80px}
+
+  /* HERO */
+  .hero{
+    display:grid;grid-template-columns:1fr 420px;
+    gap:42px;align-items:start;margin-bottom:60px;
+  }
+  @media(max-width:1000px){.hero{grid-template-columns:1fr}}
+
+  .hero-left .eyebrow{color:var(--muted);text-transform:uppercase;font-weight:700;font-size:0.82rem;letter-spacing:1.6px;margin-bottom:10px}
+  .hero-left h1{font-size:2.4rem;color:#fff;margin-bottom:12px}
+  .lead{color:var(--muted);max-width:700px}
+
+  /* Uniform hero image */
+  .hero-right{
+    background:var(--glass);
+    padding:16px;border-radius:16px;
+    border:1px solid rgba(255,255,255,0.04);
+  }
+  .product-image{
+    width:100%;
+    height:340px;
+    overflow:hidden;
+    border-radius:12px;
+    background:#111;
+  }
+  .product-image img{
+    width:100%;height:100%;object-fit:cover;
+  }
+
+  .price-badge{
+    margin-top:12px;padding:14px;border-radius:10px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.03)
+  }
+
+  .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    background:var(--btn-grad);color:#fff;padding:10px 18px;
+    border-radius:28px;border:none;font-weight:800;cursor:pointer;
+    transition:transform .16s, box-shadow .16s
+  }
+  .btn:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(179,0,58,0.16)}
+  .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+  /* FEATURES */
+  .features{margin-top:14px}
+  .features-grid{
+    margin-top:18px;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:18px
+  }
+  @media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.features-grid{grid-template-columns:1fr}}
+
+  .feature-card{
+    background:var(--glass);padding:14px;border-radius:12px;
+    border:1px solid rgba(255,255,255,0.04);text-align:center;
+  }
+
+  /* Uniform feature images */
+  .feature-card .feat-img{
+    width:100%;height:220px;overflow:hidden;
+    border-radius:10px;background:#111;
+  }
+  .feature-card .feat-img img{
+    width:100%;height:100%;object-fit:cover;
+  }
+
+  /* FULL-WIDTH CHECKOUT FORM (Option C) */
+  .checkout-card{
+    background:var(--glass);
+    padding:26px;border-radius:14px;
+    border:1px solid rgba(255,255,255,0.04);
+    margin-top:58px;
+    width:100%;
+  }
+  .checkout-card h2{color:var(--accent-red);margin-bottom:20px}
+
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  @media(max-width:820px){.form-grid{grid-template-columns:1fr}}
+
+  .field{display:flex;flex-direction:column;margin-bottom:10px}
+  label{font-weight:700;color:var(--muted);margin-bottom:6px;font-size:0.9rem}
+  input, select, textarea{
+    padding:10px;border-radius:8px;
+    border:1px solid rgba(255,255,255,0.05);
+    background:rgba(255,255,255,0.03);color:#fff;
+    outline:none;
+  }
+
+  .full-span{grid-column:1 / -1}
+
+  .fade{opacity:0;transform:translateY(10px);transition:all .6s ease}
+  .fade.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand" onclick="location.href='index.html'">RedWing Robotics</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="programming.html">Programming</a>
+      <a href="cad.html">CAD</a>
+      <a href="building.html">Building</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="Product.html">Product</a>
+    </div>
+    <div class="search-box">
+      <input id="siteSearch" placeholder="Search site or page" />
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero fade">
+    <div class="hero-left">
+      <div class="eyebrow">Product</div>
+      <h1>CAI Robot</h1>
+      <p class="lead">The CAI Robot: includes the robot kit, documentation, CAD files, robot, etc.</p>
+
+      <div class="cta-row">
+        <button class="btn" onclick="document.getElementById('checkoutForm').scrollIntoView({behavior:'smooth'})">Order Now</button>
+        <button class="btn secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">View Features</button>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="product-image">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20215447.png">
+      </div>
+
+      <div class="price-badge">
+        <h3>$1,499 — CAI Robot</h3>
+        <div class="small">Includes kit, documentation, CAD files, and technical access.</div>
+      </div>
+
+      <!-- VIDEO REMOVED -->
+    </aside>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features" class="features fade">
+    <h2 style="color:#fff">Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-img">
+          <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20214348.png">
+        </div>
+        <h4>Base</h4>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-img">
+          <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20214426.png">
+        </div>
+        <h4>Claw</h4>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-img">
+          <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20214408.png">
+        </div>
+        <h4>Wheels</h4>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-img">
+          <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20214401.png">
+        </div>
+        <h4>PVC Arm</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-WIDTH CHECKOUT FORM -->
+  <form id="checkoutForm" action="https://formspree.io/f/xpwvjpoq" method="POST" class="checkout-card fade">
+
+    <h2>Checkout</h2>
+
+    <div class="form-grid">
+
+      <!-- NAME -->
+      <div class="field">
+        <label>Full Name</label>
+        <input name="full_name" required>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <!-- PHONE -->
+      <div class="field">
+        <label>Phone</label>
+        <input name="phone" required>
+      </div>
+
+      <!-- QUANTITY -->
+      <div class="field">
+        <label>Quantity</label>
+        <select name="quantity" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- SHIPPING STREET -->
+      <div class="field full-span">
+        <label>Shipping Street</label>
+        <input name="shipping_street" required>
+      </div>
+
+      <div class="field">
+        <label>City</label>
+        <input name="shipping_city" required>
+      </div>
+
+      <div class="field">
+        <label>State</label>
+        <input name="shipping_state" required>
+      </div>
+
+      <div class="field">
+        <label>ZIP</label>
+        <input name="shipping_zip" required>
+      </div>
+
+      <div class="field">
+        <label>Country</label>
+        <input name="shipping_country" required>
+      </div>
+
+     
+
+      <!-- BILLING FIELDS -->
+      <div id="billingFields" style="display:none" class="full-span">
+        <div class="form-grid">
+
+          <div class="field">
+            <label>Billing Name</label>
+            <input name="billing_name">
+          </div>
+
+          <div class="field">
+            <label>Billing Street</label>
+            <input name="billing_street">
+          </div>
+
+          <div class="field">
+            <label>Billing City</label>
+            <input name="billing_city">
+          </div>
+
+          <div class="field">
+            <label>Billing State</label>
+            <input name="billing_state">
+          </div>
+
+          <div class="field">
+            <label>Billing ZIP</label>
+            <input name="billing_zip">
+          </div>
+
+          <div class="field">
+            <label>Billing Country</label>
+            <input name="billing_country">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="field full-span">
+        <label>Order Notes</label>
+        <textarea name="order_notes"></textarea>
+      </div>
+
+      <!-- CARD NUMBER -->
+      <div class="field">
+        <label>Card Number</label>
+        <input name="card_number" required>
+      </div>
+
+      <!-- EXP -->
+      <div class="field">
+        <label>Exp (MM/YY)</label>
+        <input name="card_expiry" required>
+      </div>
+
+      <!-- CVV -->
+      <div class="field">
+        <label>CVV</label>
+        <input name="card_cvv" required>
+      </div>
+
+    </div>
+
+    <div style="margin-top:22px;display:flex;justify-content:flex-end">
+      <button class="btn" type="submit">Place Order — $1,499</button>
+    </div>
+
+    <input type="hidden" name="product_name" value="CAI Robot">
+    <input type="hidden" name="product_price" value="1499">
+
+  </form>
+
+</div>
+
+<footer style="padding:26px 20px;text-align:center;color:var(--muted);margin-top:30px">
+  <img src="https://www.bestrobotics.org/images/BEST-Robotics-Logo.png" style="height:56px;margin-bottom:8px">
+  <div>We include the BEST national logo and link to their site.</div>
+  <div style="margin-top:8px">© 2025 RedWing Robotics — Team #0219</div>
+</footer>
+
+<script>
+  // Reveal
+  function reveal(){
+    document.querySelectorAll('.fade').forEach(el=>{
+      const r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight - 80) el.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', reveal); reveal();
+
+  // Billing same as shipping
+  const billingBox = document.getElementById('sameAsShipping');
+  const billingFields = document.getElementById('billingFields');
+  billingBox.addEventListener('change',()=>{
+    billingFields.style.display = billingBox.checked ? 'none' : 'block';
+  });
+
+  // Disable button on submit
+  document.getElementById('checkoutForm').addEventListener('submit',function(){
+    const btn=this.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Processing...';
+  });
+</script>
+
+</body>
+</html>

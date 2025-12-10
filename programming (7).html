@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming — RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* === BASE === */
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Lexend",sans-serif;
+    background:#0b0e15;
+    color:#eaeaea;
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  :root{
+    --accent-red:#ff004d;
+    --accent-blue:#00b7ff;
+    --glass:rgba(255,255,255,0.05);
+    --muted:#bfc8d1;
+  }
+
+  /* === NAVBAR === */
+  nav{
+    position:fixed;top:0;left:0;right:0;height:78px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 22px;background:rgba(10,10,20,0.75);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:999;
+  }
+  .brand{
+    color:var(--accent-red);
+    font-weight:700;
+    cursor:pointer;
+    font-size:1.2rem;
+  }
+  .nav-links{
+    display:flex;gap:18px;align-items:center;
+  }
+  .nav-item{position:relative}
+  .nav-item > a{
+    color:#fff;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;
+  }
+  .nav-item > a:hover{background:rgba(255,0,77,0.08)}
+
+  /* DROPDOWN */
+  .preview{
+    position:absolute;top:100%;left:0;
+    min-width:220px;background:#0e1420;
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:10px;display:none;
+    flex-direction:column;padding:10px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.7)
+  }
+  .preview a{
+    text-decoration:none;color:#ddd;
+    padding:8px;border-radius:6px;
+  }
+  
+  }
+  .nav-item:hover .preview{display:flex}
+
+  /* SEARCH */
+  .search-box{
+    background:var(--glass);
+    padding:6px 12px;border-radius:999px;
+    border:1px solid rgba(255,255,255,0.05)
+  }
+  .search-box input{
+    background:transparent;color:#fff;border:none;
+    outline:none;width:170px;
+  }
+  @media(max-width:900px){ .search-box{display:none} }
+
+  /* BUTTON */
+  .btn{
+    background:linear-gradient(90deg,var(--accent-red),#b3003a);
+    color:white;padding:10px 18px;border:none;
+    border-radius:30px;cursor:pointer;
+    font-weight:700;
+    transition:0.3s;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 4px 18px rgba(255,0,77,0.35)}
+
+  /* PAGE LAYOUT */
+  header{
+    padding-top:120px;text-align:center;
+  }
+  header h1{
+    color:#fff;font-size:2.4rem;margin-bottom:6px;
+  }
+  header p{
+    color:var(--muted);max-width:760px;margin:0 auto;
+  }
+
+  section.page-section{
+    max-width:1050px;margin:46px auto;padding:0 20px;
+  }
+
+  .card{
+    background:var(--glass);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:14px;
+    padding:20px; margin-bottom:26px;
+  }
+  .card h2{
+    color:var(--accent-red);margin-bottom:4px;font-size:1.35rem;
+  }
+  .card p{
+    color:var(--muted);margin-bottom:10px;
+  }
+  .card img{
+    width:100%;border-radius:10px;margin:8px 0;
+  }
+  .caption{
+    color:#8590a0;font-size:0.9rem;margin-top:4px;
+  }
+
+  footer{
+    margin-top:60px;padding:30px;text-align:center;
+    background:rgba(255,255,255,0.03);
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:var(--muted);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="brand" onclick="location.href='index.html'">RedWing Robotics</div>
+
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+    </div>
+
+    
+
+    <div class="nav-item">
+      <a href="cad.html">CAD</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="building.html">Building</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="marketing.html">Marketing</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="sponsors.html">Sponsors</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="Product.html">Product</a>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <input placeholder="Search page…">
+  </div>
+</nav>
+
+<header>
+  <h1>Programming Department</h1>
+  <p>Responsible for the robot’s logic, automation, sensing, movement algorithms, and system intelligence</p>
+</header>
+
+<!-- ============ SECTION 1 ============ -->
+<section id="Overview" class="page-section">
+  <div class="card">
+    <h2>Programming Overview</h2>
+    <p>The programming team ensures the robot performs consistently through sensor-based routines and structured software practices. All control systems follow documented procedures outlined in the engineering notebook.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20200715.png" alt="Programming overview">
+    <div class="caption">Robot with sensors and our code</div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 ============ -->
+<section id="Vex Code" class="page-section">
+  <div class="card">
+    <h2>VEXcode Development</h2>
+    <p>Movement logic, autonomous routines, and hardware mappings were all implemented using VEXcode V5 following the control specifications outlined in competition requirements. The team documented each block-based routine and driver-control script in the notebook.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20201132.png" alt="VEXcoding">
+    <div class="caption">Current Vex5 code</div>
+    <p><a href="https://www.vexrobotics.com/vexcode" target="_blank">VEXcode Official Website →</a></p>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 ============ -->
+<section id="Simulink Modeling" class="page-section">
+  <div class="card">
+    <h2>Simulink Modeling</h2>
+    <p>The team used MATLAB Simulink to model drivetrain response, servo movement, and signal-based behaviors before writing final code. These models allowed fast iteration and reduced physical testing risks.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20201145.png" alt="Simulink model">
+    <div class="caption">Simulink model that is also currently in the engineering notebook</div>
+    <p><a href="https://www.mathworks.com/products/simulink.html" target="_blank">Visit Simulink →</a></p>
+  </div>
+</section>
+
+
+
+<footer>
+  © 2025 RedWing Robotics — All content sourced from team notebook & official presentation.
+</footer>
+
+</body>
+</html>

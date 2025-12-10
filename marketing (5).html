@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Marketing — RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* BASE */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Lexend",sans-serif;background:#0b0e15;color:#eaeaea;
+  line-height:1.75;overflow-x:hidden;
+}
+:root{
+  --accent-red:#ff004d;
+  --accent-blue:#00b7ff;
+  --glass:rgba(255,255,255,0.04);
+  --muted:#bfc8d1;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;height:76px;
+  background:rgba(10,10,16,0.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;z-index:2000;
+}
+.brand{
+  font-size:1.05rem;font-weight:700;color:var(--accent-red);
+  cursor:pointer;user-select:none;
+}
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-item{position:relative}
+.nav-item>a{
+  color:white;text-decoration:none;font-weight:600;
+  padding:6px 10px;border-radius:8px;
+  transition:0.2s;
+}
+.nav-item>a:hover{background:rgba(255,0,77,0.18)}
+
+.preview{
+  display:none;flex-direction:column;position:absolute;top:100%;left:0;
+  min-width:220px;background:#0f1724;padding:12px;border-radius:12px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.05);z-index:2500;
+}
+.preview a{
+  color:#ccc;padding:8px;border-radius:6px;text-decoration:none;
+}
+.preview a:hover{background:rgba(255,0,77,0.18);color:#fff}
+
+.search-box{
+  background:var(--glass);padding:6px 14px;border-radius:30px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.search-box input{
+  background:transparent;border:none;color:white;outline:none;width:180px;
+}
+@media(max-width:900px){.search-box{display:none}}
+
+/* PAGE HEADER */
+.header{
+  padding-top:115px;padding-bottom:40px;text-align:center;
+}
+.header h1{
+  font-size:2.4rem;font-weight:800;margin-bottom:8px;color:#fff;
+}
+.header .typewriter{
+  font-size:1.25rem;color:var(--accent-red);height:1.5em;
+}
+
+/* SECTION */
+section{
+  max-width:1100px;margin:0 auto;padding:38px 20px;
+}
+.card{
+  background:var(--glass);padding:24px;border-radius:14px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 6px 18px rgba(0,0,0,0.38);
+}
+.card h2{color:#fff;margin-bottom:10px;font-size:1.35rem}
+.card h3{color:var(--accent-red);margin-bottom:8px;font-size:1.05rem}
+.card p{color:var(--muted)}
+.card img{
+  width:100%;border-radius:10px;margin-top:14px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.45);
+}
+
+/* FOOTER */
+footer{
+  margin-top:60px;padding:30px;text-align:center;
+  border-top:1px solid rgba(255,255,255,0.05);
+  background:rgba(255,255,255,0.02);
+}
+footer img{height:60px;margin-bottom:12px}
+footer p{color:var(--muted)}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand" onclick="location.href='index.html'">RedWing Robotics</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+      <div class="preview" data-for="home"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="programming.html">Programming</a>
+      <div class="preview" data-for="programming"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="cad.html">CAD</a>
+      <div class="preview" data-for="cad"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="building.html">Building</a>
+      <div class="preview" data-for="building"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="marketing.html">Marketing</a>
+      <div class="preview" data-for="marketing"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="sponsors.html">Sponsors</a>
+      <div class="preview" data-for="sponsors"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="order.html">Order</a>
+      <div class="preview" data-for="order"></div>
+    </div>
+
+  </div>
+
+  <div class="search-box">
+    <input id="siteSearch" placeholder="Search…" />
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="header">
+  <h1>Marketing Department</h1>
+  <div id="typewriter" class="typewriter"></div>
+</header>
+
+<!-- SECTION 1 -->
+<section id="branding">
+  <div class="card">
+    <h3>Brand Identity</h3>
+    <h2>Establishing a unified image for RedWing Robotics</h2>
+    <p>
+      Our branding process follows the guidelines established in the Marketing Presentation
+      and Engineering Notebook, focusing on clarity, professionalism, and consistency across
+      digital and printed media. Team colors, fonts, and messaging match official standards.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-07%20224450.png" alt="Brand Identity">
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="community">
+  <div class="card">
+    <h3>Community Outreach</h3>
+    <h2>Engaging local organizations and promoting STEM involvement</h2>
+    <p>
+      Outreach efforts—including school demos, community showcases, and informational presentations—
+      were executed using the communication plan documented in the notebook. Each engagement supported
+      awareness and expanded robotics participation.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-07%20224535.png" alt="Community Outreach">
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="media">
+  <div class="card">
+    <h3>Media Strategy</h3>
+    <h2>Presenting our work through coordinated communication</h2>
+    <p>
+      The team produced photos, short-form updates, and branded graphics for social channels. All posts
+      followed BEST Robotics requirements: hashtag <strong>#BESTRobotics</strong> and tag
+      <strong>@BESTRobotics</strong>.
+    </p>
+    <img src="https://uploads.onecompiler.io/4456trbnd/447472fwy/Screenshot%202025-12-09%20130334.png" alt="Media Strategy">
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section id="booth">
+  <div class="card">
+    <h3>Marketing Booth</h3>
+    <h2>Showcasing engineering, creativity, and team narrative</h2>
+    <p>
+      The booth display was built according to the layout, messaging, and visual hierarchy described in the
+      Marketing Presentation. It highlights the robot mission, team identity, and outreach work.
+    </p>
+    <img src="https://uploads.onecompiler.io/4456trbnd/447472fwy/Screenshot%202025-12-09%20131050.png" alt="Marketing Booth">
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="strategy">
+  <div class="card">
+    <h3>Promotional Strategy</h3>
+    <h2>Explaining our robot’s value and mission</h2>
+    <p>
+      Promotion materials—including flyers, visuals, and talking points—were created directly from the robot
+      narrative and technical descriptions in the notebook and presentation. Messaging emphasizes clarity,
+      problem-solving, and community purpose.
+    </p>
+    <img src="https://uploads.onecompiler.io/4456trbnd/447472fwy/Screenshot%202025-12-09%20125822.png" alt="Promotion Strategy">
+  </div>
+</section>
+
+<footer>
+  <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20194603.png" alt="BEST Robotics Logo">
+  <p>This site follows all BEST Robotics branding requirements including logo inclusion and link to the national site.</p>
+  <p style="margin-top:8px">© 2025 RedWing Robotics</p>
+</footer>
+
+<script>
+/* Typing header */
+const lines=["Marketing Strategy","Brand Development","Community Engagement","Digital Outreach"];
+let i=0,c=0,del=false;
+const tw=document.getElementById("typewriter");
+function loop(){
+  let t=lines[i];
+  if(!del){
+    tw.textContent=t.slice(0,++c);
+    if(c===t.length+1){del=true;setTimeout(loop,800);return;}
+    setTimeout(loop,70);
+  } else {
+    tw.textContent=t.slice(0,--c);
+    if(c===0){del=false;i=(i+1)%lines.length;setTimeout(loop,320);return;}
+    setTimeout(loop,35);
+  }
+}
+loop();
+
+/* Dropdown items */
+const navHeadings={
+  marketing:[
+    
+  ]
+};
+
+document.querySelectorAll(".preview").forEach(x=>{
+  const key=x.dataset.for;
+  const list=navHeadings[key]||[];
+  x.innerHTML=list.map(s=>{
+    const anchor=s.replace(/\s+/g,"").toLowerCase();
+    return `<a href="#${anchor}">${s}</a>`;
+  }).join("");
+});
+
+/* keep dropdown open until click outside */
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".nav-item")){
+    document.querySelectorAll(".preview").forEach(p=>p.style.display="none");
+  }
+});
+document.querySelectorAll(".nav-item").forEach(item=>{
+  item.addEventListener("mouseenter",()=>{
+    document.querySelectorAll(".preview").forEach(p=>p.style.display="none");
+    const p=item.querySelector(".preview");
+    if(p)p.style.display="flex";
+  });
+});
+</script>
+
+</body>
+</html>

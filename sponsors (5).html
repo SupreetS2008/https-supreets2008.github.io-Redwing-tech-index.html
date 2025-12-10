@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0">
+<title>Sponsors — RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --accent-red:#ff004d;
+    --accent-blue:#00b7ff;
+    --glass:rgba(255,255,255,0.05);
+    --muted:#bfc8d1;
+    --btn-grad: linear-gradient(90deg, var(--accent-red), #b3003a);
+    --radius:14px;
+  }
+
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family:"Lexend", sans-serif;
+    background:#0b0e15;
+    color:#eaeaea;
+    line-height:1.7;
+    padding-bottom:80px;
+  }
+
+  /* NAVBAR */
+  nav{
+    position:fixed;top:0;left:0;right:0;height:76px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 22px;
+    background:linear-gradient(180deg,rgba(10,10,12,0.85),rgba(6,6,8,0.55));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
+  }
+  .brand{
+    cursor:pointer;color:var(--accent-red);
+    font-weight:800;font-size:1.2rem;
+  }
+
+  .nav-links{display:flex;gap:16px;align-items:center}
+  .nav-links a{
+    text-decoration:none;color:#fff;font-weight:700;
+    padding:8px 10px;border-radius:6px;
+  }
+  .nav-links a:hover{background:rgba(255,0,77,0.1)}
+
+  .search-box{
+    background:var(--glass);padding:6px 10px;
+    border-radius:999px;border:1px solid rgba(255,255,255,0.04);
+  }
+  .search-box input{
+    background:transparent;border:none;color:white;width:170px;
+    outline:none;
+  }
+
+  /* WRAPPER */
+  .wrap{
+    max-width:1200px;margin:0 auto;padding:110px 26px 40px;
+  }
+
+  /* HEADERS */
+  h1{font-size:2.2rem;margin-bottom:10px;}
+  h2{font-size:1.7rem;margin-bottom:14px;}
+  h3{color:var(--accent-red);font-size:1.3rem;margin-bottom:10px;}
+
+  /* SPONSOR GRID */
+  .sponsor-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;margin-top:22px;
+  }
+  .sponsor-card{
+    background:var(--glass);
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:var(--radius);
+    padding:18px;text-align:center;
+  }
+  .sponsor-card img{
+    width:100%;height:120px;object-fit:contain;
+    margin-bottom:12px;
+  }
+  .sponsor-card a{
+    color:var(--accent-blue);font-weight:700;text-decoration:none;
+  }
+
+  /* FORMS */
+  .form-card{
+    background:var(--glass);
+    padding:24px;
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,0.04);
+    margin-top:34px;
+  }
+  .field{display:flex;flex-direction:column;margin-bottom:14px}
+  label{font-size:0.95rem;color:var(--muted);margin-bottom:6px;font-weight:600}
+  input, textarea{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.08);
+    padding:10px;border-radius:8px;color:white;
+    outline:none;
+  }
+
+  textarea{min-height:110px;resize:vertical}
+
+  .btn{
+    margin-top:12px;
+    background:var(--btn-grad);
+    border:none;color:white;
+    padding:12px 20px;font-weight:800;
+    border-radius:30px;cursor:pointer;
+    transition:0.2s;
+  }
+  .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(255,0,77,0.25);
+  }
+
+  /* ANIMATION */
+  .fade{opacity:0;transform:translateY(18px);transition:all .6s ease}
+  .fade.show{opacity:1;transform:none}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand" onclick="location.href='index.html'">RedWing Robotics</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="programming.html">Programming</a>
+    <a href="cad.html">CAD</a>
+    <a href="building.html">Building</a>
+    <a href="marketing.html">Marketing</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="Product.html">Product</a>
+
+  </div>
+
+  <div class="search-box">
+    <input placeholder="Search…">
+  </div>
+</nav>
+
+<!-- WRAPPER -->
+<div class="wrap">
+
+  <!-- TITLE -->
+  <section class="fade">
+    <h1>Sponsors</h1>
+    <p style="color:var(--muted);max-width:740px">
+      Our work is made possible through the support of generous sponsors who believe in hands-on engineering education.
+    </p>
+  </section>
+
+  <!-- CURRENT SPONSORS -->
+  <section class="fade" style="margin-top:30px">
+    <h2>Current Sponsors</h2>
+
+    <div class="sponsor-grid">
+
+      <!-- SPONSOR 1 -->
+      <div class="sponsor-card">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20213103.png" alt="Texas Legends Logo">
+        <p>Texas Legends — Community partner supporting local youth engineering programs.</p>
+        <a href="https://texas.gleague.nba.com/" target="_blank">Visit Website →</a>
+      </div>
+
+      <!-- SPONSOR 2 -->
+      <div class="sponsor-card">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20213248.png" alt="InventHelp Logo">
+        <p>InventHelp — Innovator assistance and intellectual property guidance.</p>
+        <a href="https://www.inventhelp.com/" target="_blank">Visit Website →</a>
+      </div>
+
+      <!-- SPONSOR 3 -->
+      <div class="sponsor-card">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20213400.png" alt="Panera Bread Logo">
+        <p>Panera — Community supporter of student STEM activities.</p>
+        <a href="https://www.panerabread.com" target="_blank">Visit Website →</a>
+      </div>
+
+      <!-- SPONSOR 4 -->
+      <div class="sponsor-card">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20213458.png" alt="Waterloo Turf Logo">
+        <p>Waterloo Turf — Local business supporting robotics and engineering outreach.</p>
+        <a href="https://waterlooturf.com/" target="_blank">Visit Website →</a>
+      </div>
+
+      <!-- SPONSOR 5 -->
+      <div class="sponsor-card">
+        <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20213551.png" alt="Chipotle Logo">
+        <p>Chipotle — Community contributor supporting youth activities.</p>
+        <a href="https://www.chipotle.com" target="_blank">Visit Website →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BECOME A SPONSOR FORM -->
+  <section class="form-card fade">
+    <h2>Become a Sponsor</h2>
+    <p style="color:var(--muted);margin-bottom:18px">
+      Support our mission and help empower future engineers. Fill out the form below to begin the sponsorship process.
+    </p>
+
+    <form action="https://formspree.io/f/xpwvjpoq" method="POST">
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="field">
+        <label>Organization</label>
+        <input type="text" name="organization" required>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label>Message / Sponsorship Interest</label>
+        <textarea name="message" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit Sponsor Request</button>
+    </form>
+  </section>
+
+  <!-- INVESTOR FORM -->
+  <section class="form-card fade">
+    <h2>Become an Investor</h2>
+    <p style="color:var(--muted);margin-bottom:18px">
+      Interested in becoming an investor? Fill out this form and our team will reach out.
+    </p>
+
+    <form action="https://formspree.io/f/xpwvjpoq" method="POST">
+      <div class="field">
+        <label>Investor Name</label>
+        <input type="text" name="investor_name" required>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="investor_email" required>
+      </div>
+
+      <div class="field">
+        <label>Phone</label>
+        <input type="text" name="phone">
+      </div>
+
+      <div class="field">
+        <label>Investment Notes</label>
+        <textarea name="investment_notes"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit Investor Request</button>
+    </form>
+  </section>
+
+</div>
+
+<script>
+  function reveal(){
+    document.querySelectorAll('.fade').forEach(el=>{
+      const r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight - 80){ el.classList.add('show'); }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CAD — RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Base ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Lexend", system-ui, Arial, sans-serif;
+  background:#0b0e15;
+  color:#eaeaea;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+:root{
+  --accent-red:#ff004d;
+  --accent-blue:#00b7ff;
+  --glass:rgba(255,255,255,0.04);
+  --muted:#bfc8d1;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;height:76px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;background:linear-gradient(180deg, rgba(10,10,12,0.78), rgba(6,6,8,0.5));
+  backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.03)
+}
+.brand{cursor:pointer;color:var(--accent-red);font-weight:700;font-size:1.05rem;user-select:none}
+.nav-links{display:flex;gap:14px;align-items:center}
+.nav-item{position:relative}
+.nav-item > a{color:#fff;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
+.nav-item > a:focus{outline:2px solid rgba(255,0,77,0.08)}
+.preview{
+  position:absolute;top:100%;left:0;min-width:220px;background:#0f1724;border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);display:none;flex-direction:column;z-index:1100;
+}
+.preview a{color:#ddd;padding:8px;border-radius:6px;text-decoration:none}
+.preview a:hover{background:rgba(255,0,77,0.12);color:#fff}
+.nav-item:hover .preview{display:flex}
+
+/* Search */
+.search-box{background:var(--glass);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03)}
+.search-box input{background:transparent;border:none;color:#fff;outline:none;width:180px}
+@media(max-width:920px){.search-box{display:none}}
+
+/* Login Button */
+.login-btn{background:var(--accent-red);color:white;padding:8px 14px;border-radius:999px;border:none;font-weight:700;cursor:pointer}
+.login-btn:hover{opacity:.95;transform:translateY(-2px)}
+
+/* ===== HEADER / HERO ===== */
+.header{padding-top:110px;padding-bottom:36px;text-align:center}
+.header h1{font-size:2.4rem;color:#fff;font-weight:800;margin-bottom:8px}
+.header .typewriter{color:var(--accent-red);font-weight:800;font-size:1.2rem;min-height:1.4em;margin-bottom:8px}
+.header p{color:var(--muted);max-width:900px;margin:0 auto}
+
+/* ===== CONTENT SECTIONS ===== */
+section.site-section{padding:24px 18px;max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:920px){.grid{grid-template-columns:1fr}}
+.card{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.5);margin-bottom:18px}
+.card h3{color:#fff;margin-bottom:6px}
+.card .sub{color:var(--accent-red);font-weight:700;margin-bottom:8px}
+.card p{color:var(--muted);margin-bottom:10px}
+
+/* ===== UPDATED IMAGE STYLING ===== */
+.card img {
+    width: 100%;          /* makes image span the card width */
+    border-radius: 10px;  /* keeps the rounded corners */
+    margin-top: 10px;
+    object-fit: contain;   /* preserves full image without cropping */
+    height: auto;          /* height adjusts to maintain aspect ratio */
+    max-height: 500px;     /* optional: prevent images from becoming too tall */
+    display: block;        /* removes small gaps below images */
+}
+
+.caption{color:#aab3bd;font-size:0.9rem;margin-top:8px}
+
+/* Footer */
+footer{padding:32px 20px;text-align:center;color:var(--muted);margin-top:30px;background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.04)}
+footer img{height:56px;margin-bottom:10px}
+.fade{opacity:0;transform:translateY(12px);transition:all .6s ease}
+.fade.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand" onclick="location.href='index.html'">RedWing Robotics</div>
+
+  <div class="nav-links" role="navigation" aria-label="Main Navigation">
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+      <div class="preview" data-for="home"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="programming.html">Programming</a>
+      <div class="preview" data-for="programming"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="cad.html" style="color:var(--blue)">CAD</a>
+      <div class="preview">
+        <a href="#designprocess">Assembly</a>
+        <a href="#prototyping">Prototyping</a>
+        <a href="#manufacturing">Manufacturing Steps</a>
+        <a href="#testing">Testing Cycles</a>
+        <a href="#final">Final Integration</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="building.html">Building</a>
+      <div class="preview" data-for="building"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="marketing.html">Marketing</a>
+      <div class="preview" data-for="marketing"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="sponsors.html">Sponsors</a>
+      <div class="preview" data-for="sponsors"></div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Product.html">Product</a>
+      <div class="preview" data-for="Product"></div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="search-box" role="search"><input id="siteSearch" placeholder="Search site or page" aria-label="Search"></div>
+    <button class="login-btn" onclick="window.location.href='https://accounts.google.com/o/oauth2/v2/auth'">Login</button>
+  </div>
+</nav>
+
+<header class="header">
+  <h1>CAD Department</h1>
+  <div id="typewriter" class="typewriter" aria-live="polite"></div>
+  <p>CAD includes: Inventor models, drawings, BOMs, constraints and material choices are all captured for reproducible builds.</p>
+</header>
+
+<!-- SECTION 1: Design Process -->
+<section id="designprocess" class="site-section fade">
+  <div class="card">
+    <div class="sub">Design Process</div>
+    <h3>From concept to validated model</h3>
+    <p>Using Autodesk Inventor, the CAD team developed structural and mechanical representations of the robot, defining constraints, manufacturing feasibility, and assembly relationships.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20202343.png" alt="CAD process">
+    <div class="caption">Early sketches (from the team notebook).</div>
+  </div>
+</section>
+
+<!-- SECTION 2: Mechanical Requirements -->
+<section id="mechanicalrequirements" class="site-section fade">
+  <div class="card">
+    <div class="sub">Mechanical Requirements</div>
+    <h3>Design rules defined early</h3>
+    <p>The notebook lists mechanical requirements including attachment points, weight limits, access for maintenance, and pathways for motion which guided component design and placement.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20202528.png" alt="Mechanical requirements">
+    <div class="caption">Specification pages and requirement checklists extracted from the notebook.</div>
+  </div>
+</section>
+
+<!-- SECTION 3: Mechanical Constraints -->
+<section id="mechanicalconstraints" class="site-section fade">
+  <div class="card">
+    <div class="sub">Mechanical Constraints</div>
+    <h3>Ensuring real-world feasibility</h3>
+    <p>Constraints were applied to define joint ranges, collision envelopes, and simulated motion paths to prevent unrealistic configurations and ensure manufacturability.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20202927.png" alt="Mechanical constraints">
+    <div class="caption">Constraint examples and collision checks included in CAD revision logs.</div>
+  </div>
+</section>
+
+<!-- SECTION 4: Subtractor & Switch Models -->
+<section id="models" class="site-section fade">
+  <div class="card">
+    <div class="sub">Subsystem Models</div>
+    <h3>Subtractor, switch, and supporting assemblies</h3>
+    <p>Major subsystems such as the subtractor and switch were modeled and iterated on with dimensioned drawings; tolerances and fastener details were recorded for production handoff.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/443ym7red/image_035.png" alt="Subsystem models">
+    <div class="caption">Assembly drawings and exploded-view renderings used by the build team.</div>
+  </div>
+</section>
+
+<!-- SECTION 5: Materials & Renderings -->
+<section id="materials" class="site-section fade">
+  <div class="card">
+    <div class="sub">Materials & Renderings</div>
+    <h3>Bill of materials and final visualizations</h3>
+    <p>The CAD deliverables include a BOM, material callouts, and renders to communicate finishes and assembly orientation to sponsors and fabricators.</p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20205050.png" alt="Materials and renderings">
+    <div class="caption">BOM excerpts and final rendered views prepared for documentation and sponsor presentation.</div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20194603.png" alt="BEST Robotics Logo">
+  <p style="margin-top:8px">We have includde the national BEST Robotics logo and the link to their site. Please use social outreach<strong>#BESTRobotics</strong> and tags <strong>@BESTRobotics</strong>.</p>
+  <p style="margin-top:8px;color:var(--muted)">© 2025 RedWing Robotics</p>
+</footer>
+
+<script>
+/* Typewriter */
+const phrases=["CAD Modeling","Inventor Assemblies","Design Validation","BOM & Rendering"];
+let idx=0,ch=0,del=false;
+const el=document.getElementById('typewriter');
+(function typeLoop(){
+  const cur=phrases[idx];
+  el.textContent = del ? cur.slice(0, ch--) : cur.slice(0, ch++);
+  if(!del && ch === cur.length+1){ del=true; setTimeout(typeLoop, 900); }
+  else if(del && ch === 0){ del=false; idx=(idx+1)%phrases.length; setTimeout(typeLoop, 400); }
+  else setTimeout(typeLoop, del?40:80);
+})();
+
+/* Populate preview dropdowns */
+const navHeadings = {
+ 
+  };
+
+document.querySelectorAll('.preview').forEach(pre=>{
+  const key = pre.getAttribute('data-for') || 'home';
+  const list = navHeadings[key] || [];
+  pre.innerHTML = list.map(item=>{
+    const page = (key === 'home') ? 'index.html' : key + '.html';
+    const anchor = item.replace(/\s+/g,'').toLowerCase();
+    return `<a href="${page}#${anchor}">${item}</a>`;
+  }).join('');
+});
+
+/* Keep previews open until click outside */
+let openPreview = null;
+document.querySelectorAll('.nav-item').forEach(item=>{
+  item.addEventListener('mouseenter', ()=> {
+    document.querySelectorAll('.preview').forEach(p=>p.style.display='none');
+    const preview = item.querySelector('.preview');
+    if(preview){ preview.style.display='flex'; openPreview = preview; }
+  });
+});
+document.addEventListener('click', (e)=>{
+  if(!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.preview').forEach(p=>p.style.display='none');
+    openPreview = null;
+  }
+});
+
+/* Simple search quick-nav */
+document.getElementById('siteSearch').addEventListener('keydown', e=>{
+  if(e.key === 'Enter'){
+    const q = e.target.value.toLowerCase();
+    if(q.includes('cad')) location.href='cad.html';
+    else if(q.includes('inventor') || q.includes('models')) location.href='cad.html#designprocess';
+    else if(q.includes('materials')||q.includes('bom')) location.href='cad.html#materials';
+    else alert('No quick match found on site.');
+  }
+});
+
+/* reveal */
+const reveal = ()=>{ document.querySelectorAll('.fade').forEach(el=>{
+  const r = el.getBoundingClientRect(); if(r.top < window.innerHeight - 80) el.classList.add('show'); }); };
+window.addEventListener('scroll', reveal); reveal();
+</script>
+
+</body>
+</html>

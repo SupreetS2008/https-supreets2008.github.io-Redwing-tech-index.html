@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building – RedWing Robotics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red:#ff004d;
+    --blue:#00b7ff;
+    --white:#ffffff;
+    --glass:rgba(255,255,255,0.05);
+  }
+
+  body {
+    margin:0;
+    font-family:"Lexend",sans-serif;
+    background:#0b0e15;
+    color:#eaeaea;
+    line-height:1.7;
+  }
+
+  /* NAVBAR */
+  nav {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    backdrop-filter:blur(10px);
+    background:rgba(10,10,15,0.85);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+  }
+
+  .brand {
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--red);
+    cursor:pointer;
+  }
+
+  .nav-links {
+    display:flex;
+    gap:18px;
+  }
+
+  .nav-item > a {
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 10px;
+    border-radius:6px;
+  }
+
+  .nav-item {
+    position:relative;
+  }
+
+  /* DROPDOWN */
+  .preview {
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:220px;
+    display:none;
+    flex-direction:column;
+    background:#111827;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    z-index:2000;
+  }
+
+  .nav-item:hover .preview {
+    display:flex;
+  }
+
+  .preview a {
+    padding:8px;
+    text-decoration:none;
+    color:#ddd;
+    border-radius:6px;
+  }
+
+  .preview a:hover {
+    background:rgba(255,0,77,0.14);
+    color:white;
+  }
+
+  /* SEARCH */
+  .search-box {
+    background:var(--glass);
+    padding:6px 12px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+  }
+  @media (max-width:850px){
+    .search-box{display:none;}
+  }
+  .search-box input {
+    background:transparent;
+    border:none;
+    color:white;
+    outline:none;
+    width:160px;
+  }
+
+  /* SECTION */
+  section {
+    max-width:1100px;
+    margin:0 auto;
+    padding:120px 20px 60px;
+  }
+
+  h2 {
+    color:var(--red);
+    font-size:2rem;
+    margin-bottom:16px;
+  }
+
+  .card {
+    background:var(--glass);
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:28px;
+    border:1px solid rgba(255,255,255,0.06);
+  }
+
+  .card img {
+    width:100%;
+    border-radius:10px;
+    margin-top:12px;
+  }
+
+  .sub {
+    font-weight:700;
+    color:var(--blue);
+    text-transform:uppercase;
+    margin-bottom:6px;
+    letter-spacing:1px;
+    font-size:0.85rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding:30px;
+    text-align:center;
+    background:rgba(255,255,255,0.03);
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
+  footer img {height:54px;margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="brand" onclick="window.location='index.html'">RedWing Robotics</div>
+
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+      <div class="preview">
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#brand">Brand Promise</a>
+        <a href="index.html#public">Public Image</a>
+        <a href="index.html#team">Team Demographics</a>
+        <a href="index.html#history">History</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="programming.html">Programming</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="cad.html">CAD</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="building.html" style="color:var(--blue)">Building</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="marketing.html">Marketing</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="sponsors.html">Sponsors</a>
+    </div>
+    
+    <div class="nav-item">
+      <a href="Product.html">Product</a>
+    </div>
+
+  </div>
+
+  <div class="search-box">
+    <input placeholder="Search..." id="searchBar">
+  </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<section>
+  <h1 style="font-size:2.4rem;color:white;margin-bottom:20px;">BUILDING DEPARTMENT</h1>
+  <p style="max-width:800px;color:#bfc8d1">
+    Building with passion
+  </p>
+</section>
+
+<!-- 1. Assembly -->
+<section id="assembly">
+  <h2>Assembly</h2>
+  <div class="card">
+    <div class="sub">Robot Assembly Overview</div>
+    <p>
+      Our team followed a structured mechanical workflow, beginning with frame construction, drivetrain installation, and subsystem alignment. Students emphasized bolt-consistent patterns, redundancy checks, and quality assurance throughout each phase.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20210611.png">
+  </div>
+</section>
+
+<!-- 2. Prototyping -->
+<section id="prototyping">
+  <h2>Prototyping</h2>
+  <div class="card">
+    <div class="sub">Iteration & Controlled Testing</div>
+    <p>
+      Early prototypes included claw revisions, arm rotation mechanisms, and intake configurations. Students produced multiple controlled tests recorded with detailed notes and failure-mode assessments.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20211249.png">
+  </div>
+</section>
+
+<!-- 3. Manufacturing -->
+<section id="manufacturing">
+  <h2>Manufacturing Steps</h2>
+  <div class="card">
+    <div class="sub">Fabrication & Component Prep</div>
+    <p>
+      Students used cutting tools, drills, and 3D printed components to fabricate parts, ensuring tolerances met CAD specifications. All components were labeled and documented before final installation.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20211905.png">
+  </div>
+</section>
+
+<!-- 4. Testing -->
+<section id="testing">
+  <h2>Testing Cycles</h2>
+  <div class="card">
+    <div class="sub">Trial Runs & Adjustments</div>
+    <p>
+      Testing cycles included drive motion trials, subsystem stress checks, and repeated autonomous validation. Students logged outcomes and implemented incremental adjustments to improve performance consistency.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20212028.png">
+  </div>
+</section>
+
+<!-- 5. Final Integration -->
+<section id="final">
+  <h2>Final Integration</h2>
+  <div class="card">
+    <div class="sub">Completion & System Alignment</div>
+    <p>
+      After all components were validated, the team assembled the robot into a finalized configuration. Final checks ensured alignment of electronics, secure connections, and functional compliance with BEST rules.
+    </p>
+    <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20212322.png">
+  </div>
+</section>
+
+<footer>
+  <img src="https://uploads.onecompiler.io/43pz8jcrg/44695znvr/Screenshot%202025-12-02%20194603.png">
+  <p>© 2025 RedWing Robotics – Team #0219</p>
+</footer>
+
+<script>
+// BASIC SEARCH
+document.getElementById("searchBar").addEventListener("keydown", e=>{
+  if(e.key==="Enter"){
+    const q=e.target.value.toLowerCase();
+    if(q.includes("test")) location="#testing";
+    if(q.includes("final")) location="#final";
+    if(q.includes("proto")) location="#prototyping";
+  }
+});
+</script>
+
+</body>
+</html>
